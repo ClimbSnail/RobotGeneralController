@@ -839,7 +839,7 @@ class InfoOut(object):
         """
         日志打印类初始化
         :param father: 父类空间
-        :param manager: 引擎
+        :param engine: 引擎
         """
         self.m_father = father
         self.m_engine = engine
@@ -910,8 +910,8 @@ class GroupActionTable(object):
         self.m_width = width
         self.m_height = height
         self.m_tree_head_l = ["编号", "状态", "运行", "移动"] # 表头字段
-        self.m_tree_head_r = ["None"]
-        self.m_tree_width = [40, 40, 40, 40, 50]   # 列对应的宽度
+        self.m_tree_head_r = []
+        self.m_tree_width = [40, 40, 40, 40]   # 列对应的宽度
         self.ui_init()
         self.m_single_select_row = None    # 标记当前动作组表格单击选中的行
         self.m_double_select_row = None    # 标记当前动作组表格双击选中的行
@@ -933,19 +933,24 @@ class GroupActionTable(object):
         row_num = 5 # 设置表格显示多少行
         self.m_tree = ttk.Treeview(self.m_frame, show = "headings", height = row_num,
                                  xscrollcommand=self.m_scrollbar_x.set,
-                                 yscrollcommand=self.m_scrollbar_y.set, selectmode = tk.BROWSE)
+                                 yscrollcommand=self.m_scrollbar_y.set,
+                                selectmode = tk.BROWSE,
+                                #selectmode = tk.EXTENDED
+                                   )
+
+        # height为显示多少行数据 headings为只显示表头
         self.m_scrollbar_y.config(command=self.m_tree.yview, orient=tk.VERTICAL)
         self.m_scrollbar_x.config(command=self.m_tree.xview, orient=tk.HORIZONTAL)
         self.m_scrollbar_y.update()
         self.m_scrollbar_x.update()
+
         # 以下代码设置表格的行高
         rowheight = (self.m_height-self.m_scrollbar_x.winfo_height())//row_num
         style = ttk.Style()
         style.configure('Treeview', rowheight=rowheight)  # repace 40 with whatever you need
-        # height为显示多少行数据 headings为只显示表头
-        self.updata_table_head(self.m_tree_head_l+self.m_tree_head_r, self.m_tree_width)
+        self.updata_table_head(self.m_tree_head_l+self.m_tree_head_r, self.m_tree_width.copy())
 
-        self.m_tree.pack(side=tk.LEFT, expand = True, fill = tk.BOTH)  # 设置表格最大化
+        self.m_tree.pack(side=tk.LEFT, expand = False)  # 设置表格最大化
         # 鼠标事件注册
         self.m_tree.bind('<Double-1>', self.double_click_row)    # 左键双击
         self.m_tree.bind('<Button-1>', self.single_click_row)    # 左键单击
@@ -993,7 +998,10 @@ class GroupActionTable(object):
             #self.m_tree.set(item, column=self.task_status_ind, value="已关闭")
 
     def add_table(self):
-        self.updata_select_row()
+        if self.m_double_select_row != None:
+            self.m_tree.insert('', int(self.m_double_select_row[1:])-1, values=[500])
+        else:
+            self.updata_select_row()
 
     def del_table(self):
         """
@@ -1071,14 +1079,18 @@ class GroupActionTable(object):
         :param width_list: 表头名称对应列的宽度
         :return: None
         """
-        head_len = len(head_list)
-        #width_list[head_len-1] = self.m_width-sum( width_list[:head_len] )
-        print(width_list)
-        self.m_tree["columns"] = head_list
-        for col, width in zip(self.m_tree["columns"], width_list):
-            print(col, end=" ")
-            self.m_tree.column(col, width=width, anchor="center")  # 设置列
+        remainder = 750-sum( width_list )
+        if remainder>0: # 宽度不足时 填充
+            width_list.append(remainder)
+            head_list.append("None")
+        self.m_tree["columns"] = tuple(head_list)
+        for col, width in zip(head_list, width_list):
+            print(col, width, end=" ")
+            self.m_tree.column(col, width=width, anchor=tk.CENTER, stretch=tk.NO)  # 设置列
             self.m_tree.heading(col, text=col)  # 设置显示的表头名
+
+        self.m_tree.update()
+        print(self.m_tree.winfo_width())
         print()
 
     def api(self, action, param = None):
@@ -1088,13 +1100,13 @@ class GroupActionTable(object):
         elif action == mh.A_SET_TABLEHEAD:
             print(param)
             num = len(param.items())
-            new_tree_width = self.m_tree_width[:4]+[50 for cnt in range(num)]+self.m_tree_width[4:]
-            new_tree_width[-1] = 300
-
-            head_list = self.m_tree_head_l
+            new_tree_width = self.m_tree_width+[50 for cnt in range(num)]
+            # 以下记得浅拷贝
+            head_list = self.m_tree_head_l.copy()
             for name, model in param.items():
                 head_list.append(name)
             self.updata_table_head(head_list+self.m_tree_head_r, new_tree_width)
+            print()
 
     def __del__(self):
         pass

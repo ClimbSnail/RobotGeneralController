@@ -76,9 +76,9 @@ class Engine(object):
         # 动作组可视表格
         self.action_grid_frame = tk.Frame(self.root, width=800, height=150, bg="white")
         #self.action_grid_frame.grid(row=0, column=0)
-        self.action_grid_frame.place(x=0, y=self.madel_grid_frame.winfo_height())
+        #self.action_grid_frame.place(x=0, y=self.madel_grid_frame.winfo_height())
+        self.action_grid_frame.pack(side=tk.BOTTOM, expand='no', anchor=tk.SW)
         self.action_grid_frame.update()
-        print(self.action_grid_frame.winfo_width(), self.action_grid_frame.winfo_height())
         self.m_actionTable = we.GroupActionTable(self.action_grid_frame, self,
                                               width=self.action_grid_frame.winfo_width(),
                                               height=self.action_grid_frame.winfo_height())
@@ -172,9 +172,10 @@ class Engine(object):
 
 if __name__ == "__main__":
     root = tk.Tk()  # 创建窗口对象的背景色
-    root.title("机器人通用控制平台"+"\t  "+VERSION)           #窗口名
-    root.geometry('1000x650+10+10')
+    root.title("机器人通用控制平台"+"\t  "+VERSION)   #窗口名
+    root.geometry('1000x655+10+10')
     root.iconbitmap("./img/favicon_64.ico")  # 窗体图标
+    root.resizable(False, False)  # 设置窗体不可改变大小
     engine = Engine(root)
     tku.center_window(root)  # 将窗体移动到屏幕中央
     # 进入消息循环 父窗口进入事件循环，可以理解为保持窗口运行，否则界面不展示
