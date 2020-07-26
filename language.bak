@@ -1,0 +1,61 @@
+{
+  "language_set":"中文",
+
+  "language_key": "English, 中文, 日本語, Français, German",
+
+  "word_set": {
+    "Windows":"Title",
+    "Menu":"Menu, File, Setting, Model, Action, Create, Open, Save, SaveAs, Exit, Help, Language, View, FileManager, TransInfo, About, Registration",
+    "Action":"Add, Del",
+    "MassageBox":"UserCode, UserCodeText",
+    "Connect":"Connect, DisConnect, UartNo, BaudRate, IpAddr, Port",
+    "SysOut":"title"
+   },
+
+  "language": {
+        "English":{
+            "Windows":"Robot Universal Control Platform",
+            "Menu":"Menu, File, Settings, Model, Action, New, Open, Save, Save As, Exit, Help, Language, View, FileManager, TransInfo, About, Registration",
+            "Action":"Add, Del",
+            "MassageBox":"Enter your user ID, which is currently open for use",
+            "Connect":"Connect, DisConnect, UartNo, BaudRate, IpAddr, Port",
+            "SysOut":"System Out"
+        },
+
+        "中文":{
+            "Windows":"机器人通用控制平台",
+            "Menu":"菜单, 文件, 设置, 模型, 动作, 新建, 打开, 保存, 另存为, 退出, 帮助, 语言, 视图, 文件管理, 传输日志, 关于, 注册",
+            "Action":"添加舵机, 删除舵机",
+            "MassageBox":"输入您的用户识别码, 目前开放使用",
+            "Connect":"连接, 断开连接, 串口号, 波特率, IP地址, 端口",
+            "SysOut":"系统信息输出"
+        },
+
+        "日本語":{
+            "Windows":"ロボット共通制御プラットフォーム",
+            "Menu":"メニュー, ファイル, 設定, モデル, アクション, 新規作成, 開く, 保存, 名前を付けて保存, 終了, ヘルプ, 言語, 表示, ファイル管理, 転送ログ, について, 登録",
+            "Action":"追加, 削除",
+            "MassageBox":"ユーザー識別コードを入力してください, 現在利用可能です",
+            "Connect":"接続, 切断k, シリアル番号, ボーレート, IPアドレス, ポート",
+            "SysOut":"システムじょうほうしゅつりょく"
+        },
+
+        "Français":{
+            "Windows":"Plate-forme de contrôle universel de robot",
+            "Menu":"menu, fichier, paramètre, modèle, action, nouveau, ouvert, sauvegardé, enregistré comme, sortie, aide, langue, Vue, Gestion de fichiers, journal de transfert, À propos de, inscription",
+            "Action":"Ajouter, Supprimer",
+            "MassageBox":"Entrez votre numéro d'identification de l'utilisateur, actuellement ouvert",
+            "Connect":"Connectez-vous, déconnectez-vous, numéro de port série, débit en bauds, adresse IP, port",
+            "SysOut":"Sortie d'informations système"
+        },
+
+        "German":{
+            "Windows":"Universelle Steuerungsplattform für Roboter",
+            "Menu":"Menüs, Dateien, Einstellungen, Modelle, Aktionen, Neu, Öffnen, Speichern, Speichern unter, Beenden, Hilfe, Sprachen, View, Dateiverwaltung, Übertragungsprotokolle, About, registrierung",
+            "Action":"Hinzufügen, Löschen",
+            "MassageBox":"Geben Sie Ihren Benutzeridentifikationscode ein, der derzeit verfügbar ist",
+            "Connect":"Connection, disconnection, serial port number, baud rate, IP address, port",
+            "SysOut":"Ausgabe von Systeminformationen"
+        }
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "language_set": "\u4e2d\u6587",
+  "language_key": "English, \u4e2d\u6587, \u65e5\u672c\u8a9e, Fran\u00e7ais, German",
+  "word_set": {
+    "Windows": "Title",
+    "Menu": "Menu, File, Setting, Model, Action, Create, Open, Save, SaveAs, Exit, Help, Language, View, FileManager, TransInfo, About, Registration",
+    "Action": "Add, Del",
+    "MassageBox": "UserCode, UserCodeText",
+    "Connect": "Connect, DisConnect, UartNo, BaudRate, IpAddr, Port",
+    "SysOut": "title"
+  },
+  "language": {
+    "English": {
+      "Windows": "Robot Universal Control Platform",
+      "Menu": "Menu, File, Settings, Model, Action, New, Open, Save, Save As, Exit, Help, Language, View, FileManager, TransInfo, About, Registration",
+      "Action": "Add, Del",
+      "MassageBox": "Enter your user ID, which is currently open for use",
+      "Connect": "Connect, DisConnect, UartNo, BaudRate, IpAddr, Port",
+      "SysOut": "System Out"
+    },
+    "\u4e2d\u6587": {
+      "Windows": "\u673a\u5668\u4eba\u901a\u7528\u63a7\u5236\u5e73\u53f0",
+      "Menu": "\u83dc\u5355, \u6587\u4ef6, \u8bbe\u7f6e, \u6a21\u578b, \u52a8\u4f5c, \u65b0\u5efa, \u6253\u5f00, \u4fdd\u5b58, \u53e6\u5b58\u4e3a, \u9000\u51fa, \u5e2e\u52a9, \u8bed\u8a00, \u89c6\u56fe, \u6587\u4ef6\u7ba1\u7406, \u4f20\u8f93\u65e5\u5fd7, \u5173\u4e8e, \u6ce8\u518c",
+      "Action": "\u6dfb\u52a0\u8235\u673a, \u5220\u9664\u8235\u673a",
+      "MassageBox": "\u8f93\u5165\u60a8\u7684\u7528\u6237\u8bc6\u522b\u7801, \u76ee\u524d\u5f00\u653e\u4f7f\u7528",
+      "Connect": "\u8fde\u63a5, \u65ad\u5f00\u8fde\u63a5, \u4e32\u53e3\u53f7, \u6ce2\u7279\u7387, IP\u5730\u5740, \u7aef\u53e3",
+      "SysOut": "\u7cfb\u7edf\u4fe1\u606f\u8f93\u51fa"
+    },
+    "\u65e5\u672c\u8a9e": {
+      "Windows": "\u30ed\u30dc\u30c3\u30c8\u5171\u901a\u5236\u5fa1\u30d7\u30e9\u30c3\u30c8\u30d5\u30a9\u30fc\u30e0",
+      "Menu": "\u30e1\u30cb\u30e5\u30fc, \u30d5\u30a1\u30a4\u30eb, \u8a2d\u5b9a, \u30e2\u30c7\u30eb, \u30a2\u30af\u30b7\u30e7\u30f3, \u65b0\u898f\u4f5c\u6210, \u958b\u304f, \u4fdd\u5b58, \u540d\u524d\u3092\u4ed8\u3051\u3066\u4fdd\u5b58, \u7d42\u4e86, \u30d8\u30eb\u30d7, \u8a00\u8a9e, \u8868\u793a, \u30d5\u30a1\u30a4\u30eb\u7ba1\u7406, \u8ee2\u9001\u30ed\u30b0, \u306b\u3064\u3044\u3066, \u767b\u9332",
+      "Action": "\u8ffd\u52a0, \u524a\u9664",
+      "MassageBox": "\u30e6\u30fc\u30b6\u30fc\u8b58\u5225\u30b3\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044, \u73fe\u5728\u5229\u7528\u53ef\u80fd\u3067\u3059",
+      "Connect": "\u63a5\u7d9a, \u5207\u65adk, \u30b7\u30ea\u30a2\u30eb\u756a\u53f7, \u30dc\u30fc\u30ec\u30fc\u30c8, IP\u30a2\u30c9\u30ec\u30b9, \u30dd\u30fc\u30c8",
+      "SysOut": "\u30b7\u30b9\u30c6\u30e0\u3058\u3087\u3046\u307b\u3046\u3057\u3085\u3064\u308a\u3087\u304f"
+    },
+    "Fran\u00e7ais": {
+      "Windows": "Plate-forme de contr\u00f4le universel de robot",
+      "Menu": "menu, fichier, param\u00e8tre, mod\u00e8le, action, nouveau, ouvert, sauvegard\u00e9, enregistr\u00e9 comme, sortie, aide, langue, Vue, Gestion de fichiers, journal de transfert, \u00c0 propos de, inscription",
+      "Action": "Ajouter, Supprimer",
+      "MassageBox": "Entrez votre num\u00e9ro d'identification de l'utilisateur, actuellement ouvert",
+      "Connect": "Connectez-vous, d\u00e9connectez-vous, num\u00e9ro de port s\u00e9rie, d\u00e9bit en bauds, adresse IP, port",
+      "SysOut": "Sortie d'informations syst\u00e8me"
+    },
+    "German": {
+      "Windows": "Universelle Steuerungsplattform f\u00fcr Roboter",
+      "Menu": "Men\u00fcs, Dateien, Einstellungen, Modelle, Aktionen, Neu, \u00d6ffnen, Speichern, Speichern unter, Beenden, Hilfe, Sprachen, View, Dateiverwaltung, \u00dcbertragungsprotokolle, About, registrierung",
+      "Action": "Hinzuf\u00fcgen, L\u00f6schen",
+      "MassageBox": "Geben Sie Ihren Benutzeridentifikationscode ein, der derzeit verf\u00fcgbar ist",
+      "Connect": "Connection, disconnection, serial port number, baud rate, IP address, port",
+      "SysOut": "Ausgabe von Systeminformationen"
+    }
+  }
+}
