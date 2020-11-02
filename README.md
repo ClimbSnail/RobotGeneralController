@@ -10,7 +10,7 @@
 本软件为通用机器人控制器的上位机程序。本软件支持跨平台，目前已提供`Windows`、`Mac OS`、`Linux`系统的可运行程序。
 ![](https://gitee.com/ClimbSnailQ/Project_Image/raw/master/RobotGeneralController/RobotGeneralController.png)
 
-![RobotGeneralController.jpg](https://github.com/ClimbSnail/RobotGeneralController/blob/master/RobotGeneralController.jpg)
+![RobotGeneralController.png](https://github.com/ClimbSnail/RobotGeneralController/blob/master/RobotGeneralController.png)
 
 
 #### 上位机实现方案
