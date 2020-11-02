@@ -30,17 +30,19 @@ class Engine(object):
         """
         # 初始化系统配置信息
         self.m_sysinfo_file = cfg.SystemConfig("./init.cfg")
-        self.sys_info = self.m_sysinfo_file.m_sysinfo
+        self.m_sys_info = self.m_sysinfo_file.m_sysinfo
         # 模型文件控制对象
         self.m_model_file = cfg.ModelFile()
         # 动作组文件控制对象
         self.m_action_file = cfg.ActionFile()
         # 初始化语言控制类
-        self.m_lang = cfg.Language(self.sys_info["system_init"]["language"]) # first
+        self.m_lang = cfg.Language(self.m_sys_info["system_init"]["language"]) # first
         self.v_lang, self.word_map = self.m_lang.api(mh.A_UPDATALANG) # 先执行一遍语言更新
 
         # 初始化菜单栏
         self.m_menu = we.CtrlMenu(self.root, self)
+
+        self.root.iconbitmap(self.m_sys_info["system_init"]["imagepath"] + "favicon_64.ico")  # 窗体图标
 
         # 初始化舵机控件管理器
         self.madel_grid_frame = tk.Frame(self.root, width=800, height=450, bg="white")
@@ -174,7 +176,6 @@ if __name__ == "__main__":
     root = tk.Tk()  # 创建窗口对象的背景色
     root.title("机器人通用控制平台"+"\t  "+VERSION)   #窗口名
     root.geometry('1000x655+10+10')
-    root.iconbitmap("./img/favicon_64.ico")  # 窗体图标
     root.resizable(False, False)  # 设置窗体不可改变大小
     engine = Engine(root)
     tku.center_window(root)  # 将窗体移动到屏幕中央

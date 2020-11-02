@@ -1,8 +1,6 @@
-venv/
-.idea/
-__pycache__/
-build/
-dist/
-img/
-tmp.mo
-Controller.spec
+src/venv/
+src/.idea/
+src/__pycache__/
+src/build/
+src/dist/
+src/Controller.spec

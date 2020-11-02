@@ -12,6 +12,7 @@ from tkinter import filedialog
 from PIL import Image, ImageTk	# pip3 install pillow
 # 使用 ttk.Notebook 作为标签切换
 
+
 class CtrlMenu(object):
     """
     菜单栏类
@@ -497,6 +498,7 @@ class ModelManager(object):
         :param height:本控件的高度
         """
         self.m_engine = engine  # 保存引擎
+        self.m_image_path = self.m_engine.m_sys_info["system_init"]["imagepath"]
         self.m_father = father
         self.width = width
         self.height = height
@@ -521,9 +523,9 @@ class ModelManager(object):
         self.del_button.place(x=self.m_frame.winfo_width()-width,
                               y=self.m_frame.winfo_height()-height)
         # 编辑图标按钮
-        pencil_bg_image = Image.open("./img/pencil_16x16.ico")
+        pencil_bg_image = Image.open(self.m_image_path+"pencil_16x16.ico")
         self.pencil_edit_img = ImageTk.PhotoImage(pencil_bg_image)
-        pencil_bg_image = Image.open("./img/yes_16x16.ico")
+        pencil_bg_image = Image.open(self.m_image_path+"yes_16x16.ico")
         self.pencil_yes_img = ImageTk.PhotoImage(pencil_bg_image)
         self.pencil_button = tk.Button(self.m_frame, command = self.pencil_click,
                                image=self.pencil_yes_img)
@@ -907,6 +909,7 @@ class GroupActionTable(object):
         """
         self.m_father = father
         self.m_engine = engine
+        self.m_image_path = self.m_engine.m_sys_info["system_init"]["imagepath"]
         self.m_width = width
         self.m_height = height
         self.m_tree_head_l = ["编号", "状态", "运行", "移动"] # 表头字段
@@ -915,6 +918,8 @@ class GroupActionTable(object):
         self.ui_init()
         self.m_single_select_row = None    # 标记当前动作组表格单击选中的行
         self.m_double_select_row = None    # 标记当前动作组表格双击选中的行
+
+
 
     def ui_init(self):
         """
@@ -961,26 +966,26 @@ class GroupActionTable(object):
         self.m_button_frame = tk.Frame(father)
 
         # 运行按钮
-        self.run_table_img = ImageTk.PhotoImage( Image.open("./img/running_16x16.ico") )
-        # self.run_all_im = tk.PhotoImage(file="./img/running.ico")
+        self.run_table_img = ImageTk.PhotoImage( Image.open(self.m_image_path+"running_16x16.ico") )
+        # self.run_all_im = tk.PhotoImage(file=self.m_image_path+"running.ico")
         self.m_run_table_button = tk.Button(self.m_button_frame, text="X", image=self.run_table_img,
                                           command = self.run_all_action )
         self.m_run_table_button.pack(side=tk.TOP, fill=tk.X, pady=1)
 
         # 添加加
-        self.add_table_img = ImageTk.PhotoImage( Image.open("./img/+_16x16.ico") )
+        self.add_table_img = ImageTk.PhotoImage( Image.open(self.m_image_path+"+_16x16.ico") )
         self.m_add_table_button = tk.Button(self.m_button_frame, text="X", image=self.add_table_img,
                                           command = self.add_table )
         self.m_add_table_button.pack(side=tk.TOP, fill=tk.X, pady=1)
 
         # 添加减 (初始化因为没选中行 所以默认按钮关闭使能)
-        self.del_table_img = ImageTk.PhotoImage( Image.open("./img/-_16x16.ico") )
+        self.del_table_img = ImageTk.PhotoImage( Image.open(self.m_image_path+"-_16x16.ico") )
         self.m_del_table_button = tk.Button(self.m_button_frame, text="X", image=self.del_table_img,
                                           command = self.del_table, state=tk.DISABLED )
         self.m_del_table_button.pack(side=tk.TOP, fill=tk.X, pady=1)
 
         # 添加设置
-        self.set_table_img = ImageTk.PhotoImage( Image.open("./img/setting_16x16.ico") )
+        self.set_table_img = ImageTk.PhotoImage( Image.open(self.m_image_path+"setting_16x16.ico") )
         self.m_set_table_button = tk.Button(self.m_button_frame, text="X", image=self.set_table_img,
                                           command = self.set_table )
         self.m_set_table_button.pack(side=tk.TOP, fill=tk.X, pady=1)
