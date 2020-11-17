@@ -7,7 +7,15 @@
 
 #### 上位机介绍
 
-本软件为通用机器人控制器的上位机程序。本软件支持跨平台，目前已提供`Windows`、`Mac OS`、`Linux`系统的可运行程序。
+本软件为通用机器人控制器的上位机程序。
+
+###### 具有以下特点：
+1. 支持跨平台。目前已提供`Windows`、`Mac OS`、`Linux`系统的可运行程序。
+2. 支持多国语言。目前已提供中、英、法、德、韩五中语言（存放在language语言包中）。
+3. 支持各类外形的机器人。通过模块化组装的使用方式。
+4. 集成常用的数据调试接口。如串口、TCP网口。
+5. 此后将支持动态解析python脚本，以便使用人员个性化适配个人机器人。
+
 ![](https://gitee.com/ClimbSnailQ/Project_Image/raw/master/RobotGeneralController/RobotGeneralController.png)
 
 ![RobotGeneralController.png](./RobotGeneralController.png)
